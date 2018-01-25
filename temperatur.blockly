@@ -1,0 +1,87 @@
+      <xml xmlns="http://www.w3.org/1999/xhtml">
+   <variables></variables>
+   
+<block type="txtLampOn">
+   <field name="output_ports">O1</field>
+   <value name="intensity">
+   <block type="math_number">
+   <field name="NUM">8</field>
+   </block>
+   </value>
+   <next>
+   <block type="controls_whileUntil">
+   <field name="MODE">WHILE</field>
+   <value name="BOOL">
+   <block type="logic_boolean">
+   <field name="BOOL">TRUE</field>
+   </block>
+   </value>
+   <statement name="DO">
+   <block type="controls_if">
+   <mutation elseif="1"></mutation>
+   <value name="IF0">
+   <block type="logic_compare">
+   <field name="OP">LT</field>
+   <value name="A">
+   <block type="ntcThermistorGetTemperature">
+   <field name="output_ports">I1</field>
+   </block>
+   </value>
+   <value name="B">
+   <block type="math_number">
+   <field name="NUM">1</field>
+   </block>
+   </value>
+   </block>
+   </value>
+   <statement name="DO0">
+   <block type="txtLampOff">
+   <field name="output_ports">O1</field>
+   <next>
+   <block type="txtMotorDriveSpeed">
+   <field name="output_ports">M1</field>
+   <value name="speed">
+   <block type="math_number">
+                        <field name="NUM">8</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare">
+                <field name="OP">GTE</field>
+                <value name="A">
+                  <block type="ntcThermistorGetTemperature">
+                    <field name="output_ports">I1</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="txtMotorStop">
+                <field name="output_ports">M1</field>
+                <next>
+                  <block type="txtLampOn">
+                    <field name="output_ports">O1</field>
+                    <value name="intensity">
+                      <block type="math_number">
+                        <field name="NUM">8</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

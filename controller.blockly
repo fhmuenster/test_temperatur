@@ -1,0 +1,31 @@
+       <xml xmlns="http://www.w3.org/1999/xhtml">
+   <variables></variables>
+
+   <block type="txt" id="5L/sRwO$^|QQ6Ic#_R)B" x="311" y="61">
+   <mutation>
+   <port name="Input_1" type="Input"></port>
+   <port name="Input_0" type="Input"></port>
+   <port name="Output_0" type="Output"></port>
+   <port name="Output_1" type="Output"></port>
+   <port name="Motor_1" type="Motor"></port>
+   <port name="Motor_0" type="Motor"></port>
+   <port name="Counter_0" type="Counter"></port>
+   </mutation>
+   <field name="dropdown_Input_1">I1</field>
+   <field name="dropdown_Input_0">I2</field>
+   <field name="dropdown_Output_0">O1</field>
+   <field name="dropdown_Output_1">O2</field>
+   <field name="dropdown_Motor_1">M2</field>
+   <field name="dropdown_Motor_0">M3</field>
+   <field name="dropdown_Counter_0">C1</field>
+   <value name="Input_1">
+   <block type="ntcthermistor" id="KoTm[=0j/FNI5f/XLB2F"></block>
+   </value>
+   <value name="Output_0">
+   <block type="txtlamp" id="LWqp1:pU!+-pvm}YdBs5"></block>
+   </value>
+   <value name="Motor_1">
+   <block type="xsmotor" id="#(g_|^G8Z9B+Mx7^FXD2"></block>
+   </value>
+   </block>
+</xml>
